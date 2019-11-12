@@ -6,3 +6,28 @@
 body {
   padding-top: 56px;
 }
+
+.card {
+  margin-top: 20px;
+}
+
+.card-body {
+  height: 350px;
+}
+
+.py-5 {
+  background-color: #90EE90;
+  margin-top: 20px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.navbar {
+  background-color: #90EE90;
+}
