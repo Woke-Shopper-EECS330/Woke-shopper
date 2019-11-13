@@ -1,4 +1,3 @@
-    
 function formChanged(){
 
     var companyName = document.getElementById("company").value;
