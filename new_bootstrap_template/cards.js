@@ -1,3 +1,4 @@
+
 function formChanged(){
 
     var companyName = document.getElementById("company").value;
@@ -11,4 +12,3 @@ function formChanged(){
     document.getElementById("cardTitle").innerHTML = product;
     document.getElementById("cardInfo").innerHTML = info;
 }    
-    

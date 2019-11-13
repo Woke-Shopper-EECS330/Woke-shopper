@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+
   <title>Heroic Features - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
@@ -70,8 +71,11 @@
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt=""> -->
           <div class="card-body">
-            <h4 class="card-title">Siggi's Drinkable Yogurt</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <h4 class="company-name">Siggi's</h4>
+            <h5 class="product-name">Drinkable Yogurt</h5>
+            <h5 class="price">$1.99</h5>
+            <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="stores-available"><b>Whole Foods</b></p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Comment</a>
@@ -83,8 +87,11 @@
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
           <div class="card-body">
-            <h4 class="card-title">Folgers Coffee</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+            <h4 class="company-name">Folgers</h4>
+            <h5 class="product-name">Classic Roast Ground Coffee</h5>
+            <h5 class="price">$5.99</h5>
+            <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="stores-available"><b>Target</b></p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Comment</a>
@@ -96,6 +103,11 @@
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
           <div class="card-body">
+            <h4 class="company-name"></h4>
+            <h5 class="product-name"></h5>
+            <h5 class="price"></h5>
+            <p class="information"></p>
+            <p class="stores-available"><b></b></p>
             <h4 class="card-title" id="cardTitle">New Item</h4>
             <p class="card-text" id="cardInfo">New Info</p>
           </div>
@@ -128,6 +140,23 @@
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="form34"><b>Company Name</b></label>
+          <input type="text" id="form34" class="form-control validate" required>
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="form34"><b>Product Name</b></label>
+          <input type="text" id="form34" class="form-control validate" required>
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="form34"><b>Price</b></label>
+          <input type="text" id="form34" class="form-control validate" required>
+        </div>
+
+        <div class="md-form">
+          <label data-error="wrong" data-success="right" for="form8"><b>Information</b></label>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="4" required></textarea>
           <input type="text" id="company" class="form-control validate">
           <label data-error="wrong" data-success="right" for="company">Company Name</label>
         </div>
@@ -147,9 +176,14 @@
           <label data-error="wrong" data-success="right" for="info">Information</label>
         </div>
 
-        <input type="checkbox" name="store1" value="WholeFoods"> Whole Foods<br>
-        <input type="checkbox" name="store2" value="Jewel"> Jewel-Osco<br>
-        <input type="checkbox" name="store3" value="Target" checked>Target<br>
+        <div class="store-availability">
+          <label data-error="wrong" data-success="right" for="form8"><b>Locations</b></label>
+          <div class="store-options" required>
+            <input type="checkbox" name="store1" value="WholeFoods"> Whole Foods<br>
+            <input type="checkbox" name="store2" value="Jewel"> Jewel-Osco<br>
+            <input type="checkbox" name="store3" value="Target" checked>Target<br>
+          </div>
+        <div/>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
