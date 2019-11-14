@@ -9,6 +9,8 @@ function formChanged(){
     var product = companyName + '-' + productName;
     var info = price + '-' + information;
     /*info = [price, information, storeNames];*/
-    document.getElementById("cardTitle").innerHTML = product;
-    document.getElementById("cardInfo").innerHTML = info;
-}    
+    document.getElementById("company-name").innerHTML = companyName;
+    document.getElementById("product-name").innerHTML = productName;
+    document.getElementById("price-field").innerHTML = price;
+    document.getElementById("information").innerHTML = information;
+}
