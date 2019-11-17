@@ -65,17 +65,17 @@
   -->
 
     <!-- Page Features -->
-    <div class="row text-center">
+    <div class="row text-center" id="card-holder">
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt=""> -->
           <div class="card-body">
-            <h4 class="company-name">Siggi's</h4>
-            <h5 class="product-name">Drinkable Yogurt</h5>
-            <h5 class="price">$1.99</h5>
-            <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            <p class="stores-available"><b>Whole Foods</b></p>
+            <h4 id="company-name">Siggi's</h4>
+            <h5 id="product-name">Drinkable Yogurt</h5>
+            <h5 id="price">$1.99</h5>
+            <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p id="stores-available"><b>Whole Foods</b></p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Comment</a>
@@ -87,11 +87,11 @@
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
           <div class="card-body">
-            <h4 class="company-name">Folgers</h4>
-            <h5 class="product-name">Classic Roast Ground Coffee</h5>
-            <h5 class="price">$5.99</h5>
-            <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            <p class="stores-available"><b>Target</b></p>
+            <h4 id="company-name">Folgers</h4>
+            <h5 id="product-name">Classic Roast Ground Coffee</h5>
+            <h5 id="price">$5.99</h5>
+            <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p id="stores-available"><b>Target</b></p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Comment</a>
@@ -103,13 +103,13 @@
         <div class="card h-100">
           <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
           <div class="card-body">
-            <h4 class="company-name"></h4>
-            <h5 class="product-name"></h5>
-            <h5 class="price"></h5>
-            <p class="information"></p>
-            <p class="stores-available"><b></b></p>
-            <h4 class="card-title" id="cardTitle">New Item</h4>
-            <p class="card-text" id="cardInfo">New Info</p>
+            <h4 id="company-name"></h4>
+            <h5 id="product-name"></h5>
+            <h5 id="price"></h5>
+            <p id="information"></p>
+            <p id="stores-available"><b></b></p>
+            <h4 id="card-title" id="cardTitle">New Item</h4>
+            <p id="card-text" id="cardInfo">New Info</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Comment</a>
@@ -117,19 +117,17 @@
         </div>
       </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
-        <div class="">
+        <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
         	<a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
 				<i class="fa fa-plus"></i>
         	</a>
-          </div>
         </div>
 
 
 <!--- Card Modal -->
   <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
-  <form action="index.html" method="post" onsubmit="return false">
+  <form action="index.html" method="get" id="modalform">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
@@ -141,22 +139,22 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <label data-error="wrong" data-success="right" for="company"><b>Company Name</b></label>
-          <input type="text" id="company" class="form-control validate" required>
+          <input type="text" id="company" class="form-control validate">
         </div>
 
         <div class="md-form mb-5">
           <label data-error="wrong" data-success="right" for="product"><b>Product Name</b></label>
-          <input type="text" id="product" class="form-control validate" required>
+          <input type="text" id="product" class="form-control validate">
         </div>
 
         <div class="md-form mb-5">
           <label data-error="wrong" data-success="right" for="price"><b>Price</b></label>
-          <input type="text" id="price" class="form-control validate" required>
+          <input type="text" id="price" class="form-control validate">
         </div>
 
         <div class="md-form">
           <label data-error="wrong" data-success="right" for="info"><b>Information</b></label>
-          <textarea type="text" id="info" class="md-textarea form-control" rows="4" required></textarea>
+          <textarea type="text" id="info" class="md-textarea form-control" rows="4"></textarea>
         </div>
 
         <div class="store-availability">
@@ -170,7 +168,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-      	<input type="submit" value="Submit" data-dismiss="modal" onclick="formChanged()">
+      	<input type="submit" value="Submit" onclick="addCard()">
       </div>
     </div>
   </div>
