@@ -99,23 +99,6 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
-          <div class="card-body">
-            <h4 id="company-name"></h4>
-            <h5 id="product-name"></h5>
-            <h5 id="price"></h5>
-            <p id="information"></p>
-            <p id="stores-available"><b></b></p>
-            <h4 id="card-title" id="cardTitle">New Item</h4>
-            <p id="card-text" id="cardInfo">New Info</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
-          </div>
-        </div>
-      </div>
 
         <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
         	<a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
@@ -137,19 +120,19 @@
         </button>
       </div>
       <div class="modal-body mx-3">
-        <div class="md-form mb-5">
+        <div class="md-form mb-5" id="companydiv">
           <label data-error="wrong" data-success="right" for="company"><b>Company Name</b></label>
           <input type="text" id="company" class="form-control validate">
         </div>
 
-        <div class="md-form mb-5">
+        <div class="md-form mb-5" id="productdiv">
           <label data-error="wrong" data-success="right" for="product"><b>Product Name</b></label>
           <input type="text" id="product" class="form-control validate">
         </div>
 
-        <div class="md-form mb-5">
+        <div class="md-form mb-5" id="pricediv">
           <label data-error="wrong" data-success="right" for="price"><b>Price</b></label>
-          <input type="text" id="price" class="form-control validate">
+          <input type="text" id="pricenumber" class="form-control validate">
         </div>
 
         <div class="md-form">
@@ -162,13 +145,13 @@
           <div class="store-options" required>
             <input type="checkbox" name="store1" value="WholeFoods"> Whole Foods<br>
             <input type="checkbox" name="store2" value="Jewel"> Jewel-Osco<br>
-            <input type="checkbox" name="store3" value="Target" checked>Target<br>
+            <input type="checkbox" name="store3" value="Target">Target<br>
           </div>
         <div/>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-      	<input type="submit" value="Submit" onclick="addCard()">
+      	<input type="submit" value="Submit" onclick="validation()">
       </div>
     </div>
   </div>

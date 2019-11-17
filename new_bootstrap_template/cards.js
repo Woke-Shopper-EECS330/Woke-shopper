@@ -1,20 +1,47 @@
 
 $('#modalform').submit(function (e) {
     e.preventDefault();
-    $('CardModal').modal('hide');
-    document.getElementById("company").value = "";
-    document.getElementById("product").value = "";
-    document.getElementById("price").value = "";
-    document.getElementById("info").value = "";
     return false;
-
 });
+
+
+function validation() {
+
+    var companyval = document.getElementById("company").value;
+    var productval = document.getElementById("product").value;
+    var priceval = document.getElementById("pricenumber").value;
+    var informationval = document.getElementById("info").value;
+    var errormessage = document.createElement("label");
+    errormessage.innerHTML = "This field is required";
+    errormessage.setAttribute("id", "error-message");
+    $('.error').hide();
+    if ((companyval != "") && (productval != "") && (priceval != "") && (informationval != "")) {
+        addCard();
+    }
+
+    else {
+        if (companyval == "") {
+            document.getElementById("companydiv").appendChild(errormessage)
+            return false;
+        }
+        if (productval == "") {
+            $("label#product_error").show();
+            document.getElementById("productdiv").appendChild(errormessage)
+            return false;
+        }
+        if (priceval == "") {
+            $("label#price_error").show();
+            document.getElementById("pricediv").appendChild(errormessage)
+            return false;
+        }
+    }
+}
 
 
 function addCard() {
     var companyval = document.getElementById("company").value;
     var productval = document.getElementById("product").value;
-    var priceval = document.getElementById("price").value;
+    var priceval = document.getElementById("pricenumber").value;
     var informationval = document.getElementById("info").value;
 
     var plusbutton = document.getElementById("plusbutton");
@@ -30,11 +57,10 @@ function addCard() {
     var productName = document.createElement("h5");
     productName.innerHTML = productval;
     var priceValue = document.createElement("h5");
-    priceValue.innerHTML = priceval;
+    priceValue.innerHTML = "$" + priceval;
     var textInfo = document.createElement("P");
     textInfo.innerHTML = informationval;
     var storesAvailable = document.createElement("P");
-    storesAvailable.innerHTML="whole foods";
     var footerElement = document.createElement("div");
     footerElement.setAttribute("class", "card-footer");
     var commentLink = document.createElement("a");
@@ -54,5 +80,16 @@ function addCard() {
 
     cardholder.insertBefore(mainDiv, plusbutton);
 
+    $("#CardModal").modal('toggle');
+    document.getElementById("company").value = "";
+    document.getElementById("product").value = "";
+    document.getElementById("pricenumber").value = "";
+    document.getElementById("info").value = "";
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);
 
 }    
