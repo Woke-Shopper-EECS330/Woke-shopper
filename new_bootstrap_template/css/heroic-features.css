@@ -18,6 +18,7 @@ body {
 .py-5 {
   background-color: #90EE90;
   margin-top: 20px;
+  width: 100%;
 }
 
 .nav-link {
@@ -30,6 +31,10 @@ body {
 
 .navbar {
   background-color: #90EE90;
+}
+
+.store-availability {
+  padding: 50px;
 }
 
 .plus-button {
