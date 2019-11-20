@@ -1,3 +1,11 @@
+var cards = [];
+var cardsNum = 2
+
+function init() {
+	for (var i=0; i<cardsNum; i++) {
+		volLevels[i] = document.getElementById("card" + i);
+	}
+};
 
 $('#modalform').submit(function (e) {
     e.preventDefault();
@@ -50,6 +58,7 @@ function addCard() {
     mainDiv.setAttribute("class", "col-lg-3 col-md-6 mb-4");
     var divOne = document.createElement("div");
     divOne.setAttribute("class", "card h-100");
+    divOne.setAttribute("id", "card" + cardsNum)
     var divTwo = document.createElement("div");
     divTwo.setAttribute("class", "card-body");
     var companyName = document.createElement("h4");
@@ -67,6 +76,8 @@ function addCard() {
     commentLink.setAttribute("href", "#");
     commentLink.setAttribute("class", "btn btn-primary");
     commentLink.innerHTML = "Comment";
+
+    cardsNum = cardsNum + 1;
 
     divTwo.appendChild(companyName);
     divTwo.appendChild(productName);
@@ -92,4 +103,4 @@ function addCard() {
     var element = document.getElementById("error-message");
     element.parentNode.removeChild(element);
 
-}    
+}
