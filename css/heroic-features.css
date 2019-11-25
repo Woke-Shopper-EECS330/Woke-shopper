@@ -51,8 +51,17 @@ body {
 }
 
 /* Comment CSS */
-#respond {
-  margin-top: 40px;
+#namediv {
+  margin-bottom: 20px !important
+}
+
+#commentdiv {
+  margin-bottom: 20px !important
+}
+
+
+/*#respond {
+  margin-top: 10px;
 }
 
 #respond input[type='text'],
@@ -75,4 +84,4 @@ body {
 
 #posts-list.has-comments li.no-comments {
   display: none;
-}
+}*/
