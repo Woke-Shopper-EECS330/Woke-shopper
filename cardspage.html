@@ -99,102 +99,68 @@
         </div>
       </div>
 
-      <!-- begin wwww.htmlcommentbox.com -->
-       <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
-       <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-       <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24xShxWfgEcePqIk8hlMSSS1"+"&opts=16862&num=10&ts=1574661426778");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-      <!-- end www.htmlcommentbox.com -->
-
-<!--
-
-Comment Modal-->
-<!--<div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!--Comment Modal-->
+<div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
   <form action="index.html" method="get" id="modalform-comment">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
         <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Comments</h4>
+          <h4 class="modal-title w-100 font-weight-bold">Folgers Classic Roast Ground Coffee</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
-        <section id="comments" class="body">
+        <section id="comments" class="comment-body mx-3">
+          <div id="respond">
 
-          <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':’); ?>">
-            <li class="no-comments">Be the first to add a comment.</li>
-            <?php
-              foreach ($comments as $comment) {
-                ?>
-                <li><article id="comment_<?php echo($comment['id']); ?>" class="hentry">
-                  <footer class="post-info">
-                    <abbr class="published" title="<?php echo($comment['date']); ?>">
-                      <?php echo( date('d F Y', strtotime($comment['date']) ) ); ?>
-                    </abbr>
+              <h4>Leave a Comment</h4>
 
-                    <address class="vcard author">
-                      By <a class="url fn" href="#"><?php echo($comment['comment_author']); ?></a>
-                    </address>
-                  </footer>
+              <form action="cardspage.html" method="post" id="commentform">
 
-                  <div class="entry-content">
-                    <p><?php echo($comment['comment']); ?></p>
-                  </div>
-                </article></li>
-                <?php
-              }
-            ?>
-          </ol>-->
-          <!--<ol id="posts-list" class="hfeed">
-            <li><article id="comment_1" class="hentry">
-      				<footer class="post-info">
-      					<abbr class="published" title="Thu, 23 Feb 2012 23:54:46 +0000">
-      						23 February 2012
-      					</abbr>
+                <div class="md-form mb-5" id="namediv">
+                  <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                  <input type="text" id="name" class="form-control validate">
+                </div>
 
-      					<address class="vcard author">
-      						By <a class="url fn" href="#">Phil Leggetter</a>
-      					</address>
-      				</footer>
+                <div class="md-form" id="commentdiv">
+                  <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                  <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
+                </div>
 
-      				<div class="entry-content">
-      					<p>The Realtime Web Rocks!</p>
-      				</div>
-      			</article></li>
-      		</ol>
+                <div class="modal-footer d-flex justify-content-center">
+                	<input type="submit" value="Submit" onclick="validation()">
+                </div>
 
-         -->
+                <h4>Comments</h4>
 
-        <!--
+                <div class=comment-container>
+                </div>
 
-        <div id="respond">
+                <!--<label for="comment_author">Your name</label>
+                <input type="text" name="comment_author" id="comment_author" value="" tabindex="1">
 
-            <h3>Leave a Comment</h3>
+                <label for="comment" class="required">Your comment</label>
+                <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
 
-            <form action="post_comment.php" method="post" id="commentform">
 
-              <label for="comment_author">Your name</label>
-              <input type="text" name="comment_author" id="comment_author" value="" tabindex="1">
+                <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
 
-              <label for="comment" class="required">Your comment</label>
-              <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea> -->
+                <input name="submit" type="submit" value="Submit comment" />-->
 
-              <!-- comment_post_ID value hard-coded as 1
-              <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
+              </form>
 
-              <input name="submit" type="submit" value="Submit comment" />
+            </div>
 
-            </form>
-
-          </div>
       	</section>
+
 
       </div>
     </form>
   </div>
-</div>-->
+</div>
 
 
 <!--- Card Modal -->
