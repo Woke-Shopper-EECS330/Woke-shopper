@@ -94,7 +94,7 @@
             <p id="stores-available"><b>Target</b></p>
           </div>
           <div class="card-footer" id = commentbutton>
-            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
+            <a href="#" data-toggle="modal" data-target="#CommentModal"  class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@
 <!--Comment Modal-->
 <div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
-  <form action="index.html" method="get" id="modalform-comment">
+  <form action="cardspage.html" method="get" id="modalform-comment">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
@@ -120,28 +120,44 @@ aria-hidden="true">
 
               <form action="cardspage.html" method="post" id="commentform">
 
-                <div class="md-form mb-5" id="namediv">
-                  <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
-                  <input type="text" id="name" class="form-control validate">
-                </div>
-
-                <div class="md-form" id="commentdiv">
-                  <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
-                  <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
-                </div>
-
-                <div class="modal-footer d-flex justify-content-center">
-                	<input type="submit" value="Submit" onclick="validation()">
-                </div>
-
-                <h4>Comments</h4>
-
-                <div class=comment-container>
-                  <div id="username">Anthony
+                  <div class="md-form mb-5" id="namediv">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" id="name" class="form-control validate">
                   </div>
-                  <div id="comment-text">This is wack.
+
+                  <div class="md-form" id="commentdiv">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
                   </div>
-                </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <input type="submit" value="Submit" onclick="testPlease()">
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="addComment()">Submit Comment</button>
+                    <!--<button type = "button" class = "btn btn-primary" onclick="addComment()">Submit Comment</button>-->
+                    <!--<button class="btn btn-primary" onclick="addComment()">Submit</button>
+                	   <input type="submit" value="Submit" onclick="addComment()">-->
+                   </div>
+
+                   <div id="comment-header">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container">
+                   <div id="helpme" class="help"></div>
+<!--
+<div>
+  <div>testname</div>
+  <div>testcomment</div>
+</div>-->
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="comment-text">This is wack.
+                     </div>
+                   </div>
+                 </div>
 
                 <!--<label for="comment_author">Your name</label>
                 <input type="text" name="comment_author" id="comment_author" value="" tabindex="1">

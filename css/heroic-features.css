@@ -59,14 +59,22 @@ body {
   margin-bottom: 20px !important
 }
 
-.comment-container{
+.single-comment{
   border-style: solid;
   border-width: 1px;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   border-color: gray;
   padding: 5px;
   margin: 10px;
   text-align: left;
+}
+
+#username {
+  font-weight: bold;
+}
+
+#comment-text {
+  padding-top: 5px;
 }
 
 

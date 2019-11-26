@@ -1,6 +1,47 @@
 var cards = [];
 var cardsNum = 2
 
+/* this function was found on stackOverflow */
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function addComment() {
+
+		var usernameval = document.getElementById("name").value;
+		var commenttextval = document.getElementById("comment").value;
+
+		var commentHeader = document.getElementById("comment-header");
+		var commentContainer = document.getElementById("comment-container");
+
+		var singleComment = document.createElement("div");
+		singleComment.setAttribute("class", "single-comment");
+		var userName = document.createElement("div");
+		userName.setAttribute("id","username");
+		userName.innerHTML = usernameval;
+		var commentText = document.createElement("div");
+		commentText.setAttribute("id", "comment-text");
+		commentText.innerHTML = commenttextval;
+
+		singleComment.appendChild(userName);
+		singleComment.appendChild(commentText);
+
+		insertAfter(singleComment, commentHeader);
+
+    /*$("#CardModal").modal('toggle');
+    document.getElementById("company").value = "";
+    document.getElementById("product").value = "";
+    document.getElementById("pricenumber").value = "";
+    document.getElementById("info").value = "";
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);
+    var element = document.getElementById("error-message");
+    element.parentNode.removeChild(element);*/
+
+}
+
 function init() {
 	for (var i=0; i<cardsNum; i++) {
 		volLevels[i] = document.getElementById("card" + i);
