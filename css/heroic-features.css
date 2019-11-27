@@ -52,6 +52,7 @@ body {
 
 /* Comment CSS */
 #namediv {
+  margin-top: 10px;
   margin-bottom: 20px !important
 }
 
@@ -61,20 +62,40 @@ body {
 
 .single-comment{
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
+  border-radius: 5px;
   /*border-radius: 5px;*/
   border-color: gray;
   padding: 5px;
   margin: 10px;
   text-align: left;
+  background-color: #d3d3d3
+
+  ;
 }
 
 #username {
   font-weight: bold;
+  width: 217px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#timestamp {
+  width: 217px;
+  position: relative;
+  float: right;
+  text-align: right;
+  font-size: .75rem;
+  padding-bottom: 6px;
 }
 
 #comment-text {
+  margin-top: 19px;
   padding-top: 5px;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 

@@ -77,8 +77,8 @@
             <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             <p id="stores-available"><b>Whole Foods</b></p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
+          <div class="card-footer" id = commentbutton>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@
             <p id="stores-available"><b>Target</b></p>
           </div>
           <div class="card-footer" id = commentbutton>
-            <a href="#" data-toggle="modal" data-target="#CommentModal"  class="btn btn-primary">Comment</a>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ aria-hidden="true">
       <div class="modal-content">
 
         <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Folgers Classic Roast Ground Coffee</h4>
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -116,13 +116,11 @@ aria-hidden="true">
         <section id="comments" class="comment-body mx-3">
           <div id="respond">
 
-              <h4>Leave a Comment</h4>
-
               <form action="cardspage.html" method="post" id="commentform">
 
                   <div class="md-form mb-5" id="namediv">
                     <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
-                    <input type="text" id="name" class="form-control validate">
+                    <input type="text" placeholder="optional" id="name" class="form-control validate">
                   </div>
 
                   <div class="md-form" id="commentdiv">
@@ -131,7 +129,7 @@ aria-hidden="true">
                   </div>
 
                   <div class="modal-footer d-flex justify-content-center">
-                    <button type = "button" class = "btn btn-primary" onclick="addComment()">Submit Comment</button>
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment()">Submit Comment</button>
                     <!--<button type = "button" class = "btn btn-primary" onclick="addComment()">Submit Comment</button>-->
                     <!--<button class="btn btn-primary" onclick="addComment()">Submit</button>
                 	   <input type="submit" value="Submit" onclick="addComment()">-->
@@ -141,7 +139,6 @@ aria-hidden="true">
                      <h4>Comments</h4>
                    </div>
                    <div id="comment-container">
-                   <div id="helpme" class="help"></div>
 <!--
 <div>
   <div>testname</div>
@@ -149,6 +146,8 @@ aria-hidden="true">
 </div>-->
                    <div class="single-comment">
                      <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
                      </div>
                      <div id="comment-text">This is wack.
                      </div>
