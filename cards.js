@@ -1,6 +1,86 @@
 var cards = [];
 var cardsNum = 2
 
+/* this function was found on stackOverflow */
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function makeTimeStamp() {
+	var d = new Date();
+	var year = d.getFullYear();
+	var month = d.getMonth();
+	var day = d.getDate();
+	//var fuk = d.getMinutes();
+	if (d.getHours() >= 12) {
+		var hours = d.getHours() - 12;
+		var mornOrAfternoon = "pm";
+	} else {
+		var hours = d.getHours();
+		var mornOrAfternoon = "am";
+	}
+	if (d.getMinutes() >= 10) {
+		var minutes = d.getMinutes();
+	} else {
+		var minutes = "0" + d.getMinutes();
+	}
+
+	var dayAndTime = month + "/" + day + "/" + year + " - " + hours + ":" + minutes + mornOrAfternoon;
+	return dayAndTime;
+}
+
+function addComment() {
+		var usernameval = document.getElementById("name").value;
+		var timeval = makeTimeStamp();
+		var commenttextval = document.getElementById("comment").value;
+
+		var commentHeader = document.getElementById("comment-header");
+		var commentContainer = document.getElementById("comment-container");
+
+		var singleComment = document.createElement("div");
+		singleComment.setAttribute("class", "single-comment");
+		var userName = document.createElement("div");
+		userName.setAttribute("id","username");
+		if (usernameval == "") {
+			userName.innerHTML = "Anonymous";
+		} else {
+			userName.innerHTML = usernameval;
+		}
+		var timeStamp = document.createElement("div");
+		timeStamp.setAttribute("id", "timestamp");
+		timeStamp.innerHTML = timeval;
+		var commentText = document.createElement("div");
+		commentText.setAttribute("id", "comment-text");
+		commentText.innerHTML = commenttextval;
+
+	  singleComment.appendChild(userName);
+		singleComment.appendChild(timeStamp);
+		singleComment.appendChild(commentText);
+
+		insertAfter(singleComment, commentHeader);
+}
+
+function validateComment() {
+
+    var nameval = document.getElementById("name").value;
+    var commentval = document.getElementById("comment").value;
+    var errormessage = document.createElement("label");
+    errormessage.innerHTML = "This field is required";
+    errormessage.setAttribute("id", "error-message");
+    $('.error').hide();
+    if (commentval != "") {
+        addComment();
+    }
+
+    else {
+        if (commentval == "") {
+            document.getElementById("commentdiv").appendChild(errormessage)
+            return false;
+        }
+    }
+}
+
+
 function init() {
 	for (var i=0; i<cardsNum; i++) {
 		volLevels[i] = document.getElementById("card" + i);
@@ -74,8 +154,14 @@ function addCard() {
     footerElement.setAttribute("class", "card-footer");
     var commentLink = document.createElement("a");
     commentLink.setAttribute("href", "#");
+		commentLink.setAttribute("data-toggle", "modal");
+		commentLink.setAttribute("data-target", "#CommentModal");
     commentLink.setAttribute("class", "btn btn-primary");
     commentLink.innerHTML = "Comment";
+
+		/*<div class="card-footer" id = commentbutton>
+			<a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
+		</div>*/
 
     cardsNum = cardsNum + 1;
 

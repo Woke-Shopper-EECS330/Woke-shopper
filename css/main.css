@@ -319,6 +319,18 @@ legend {
     1px 1px 0 #000;
 }
 
+.subtitle {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding-top: 10px;
+  text-shadow:
+		-1px -1px 0 green,
+		1px -1px 0 green,
+		-1px 1px 0 green,
+    1px 1px 0 green;
+}
+
 /**
  * 1. Add the correct display in IE 9-.
  * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -458,6 +470,21 @@ legend {
   box-sizing: border-box;
 }
 
+.background-image {
+  /* image used for background */
+  background: url("../images/Search_001.png");
+
+  /* blur  */
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+
+  /* Center and scale the image */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .s01 {
   min-height: 100vh;
   display: -ms-flexbox;
@@ -467,10 +494,15 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  background: url("../images/Search_001.png");
-  background-size: cover;
-  background-position: center center;
   padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
 }
 
 .s01 form {

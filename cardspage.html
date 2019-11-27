@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -77,8 +77,8 @@
             <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             <p id="stores-available"><b>Whole Foods</b></p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
+          <div class="card-footer" id = commentbutton>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
@@ -93,21 +93,100 @@
             <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             <p id="stores-available"><b>Target</b></p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
+          <div class="card-footer" id = commentbutton>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
 
+<!--Comment Modal-->
+<div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
-        <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
-        	<a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
-				<i class="fa fa-plus"></i>
-        	</a>
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+
+        <section id="comments" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform">
+
+                  <div class="md-form mb-5" id="namediv">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment()">Submit Comment</button>
+                    <!--<button type = "button" class = "btn btn-primary" onclick="addComment()">Submit Comment</button>-->
+                    <!--<button class="btn btn-primary" onclick="addComment()">Submit</button>
+                	   <input type="submit" value="Submit" onclick="addComment()">-->
+                   </div>
+
+                   <div id="comment-header">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container">
+<!--
+<div>
+  <div>testname</div>
+  <div>testcomment</div>
+</div>-->
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is wack.
+                     </div>
+                   </div>
+                 </div>
+
+                <!--<label for="comment_author">Your name</label>
+                <input type="text" name="comment_author" id="comment_author" value="" tabindex="1">
+
+                <label for="comment" class="required">Your comment</label>
+                <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+
+
+                <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
+
+                <input name="submit" type="submit" value="Submit comment" />-->
+
+              </form>
+
+            </div>
+
+      	</section>
+
+
+      </div>
+    </form>
+  </div>
+</div>
 
 
 <!--- Card Modal -->
+  <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
+    <a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
+	     <i class="fa fa-plus"></i>
+    </a>
+  </div>
+
+
+
   <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <form action="index.html" method="get" id="modalform">
