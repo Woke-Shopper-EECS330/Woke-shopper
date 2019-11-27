@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -77,8 +77,8 @@
             <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             <p id="stores-available"><b>Whole Foods</b></p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
+          <div class="card-footer" id = commentbutton>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
@@ -93,21 +93,77 @@
             <p id="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             <p id="stores-available"><b>Target</b></p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Comment</a>
+          <div class="card-footer" id = commentbutton>
+            <a href="#" data-toggle="modal" data-target="#CommentModal" class="btn btn-primary">Comment</a>
           </div>
         </div>
       </div>
 
+<!--Comment Modal-->
+<div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
-        <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
-        	<a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
-				<i class="fa fa-plus"></i>
-        	</a>
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+
+        <section id="comments" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform">
+
+                  <div class="md-form mb-5" id="namediv">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment()">Submit Comment</button>
+                   </div>
+
+                   <div id="comment-header">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container">
+
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is a good source.
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div>
+      	</section>
+      </div>
+    </div>
+    </form>
+  </div>
 
 
 <!--- Card Modal -->
+  <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
+    <a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
+	     <i class="fa fa-plus"></i>
+    </a>
+  </div>
+
+
+
   <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <form action="index.html" method="get" id="modalform">
@@ -149,36 +205,19 @@
           </div>
         <div/>
 
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+        	<input type="submit" value="Submit" onclick="validation()">
+        </div>
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-      	<input type="submit" value="Submit" onclick="validation()">
-      </div>
-    </div>
   </div>
 </form>
 </div>
 
 
-
-
-
-      <!--<div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>-->
-
-    </div>
+</div>
     <!-- /.row -->
-
-  </div>
+</div>
   <!-- /.container -->
 
   <!-- Footer -->

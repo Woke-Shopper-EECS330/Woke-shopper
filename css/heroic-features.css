@@ -49,3 +49,78 @@ body {
     border-color: #007bff;
     margin-top: 200px
 }
+
+/* Comment CSS */
+#namediv {
+  margin-top: 10px;
+  margin-bottom: 20px !important
+}
+
+#commentdiv {
+  margin-bottom: 20px !important
+}
+
+.single-comment{
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 5px;
+  /*border-radius: 5px;*/
+  border-color: gray;
+  padding: 5px;
+  margin: 10px;
+  text-align: left;
+  background-color: #d3d3d3
+
+  ;
+}
+
+#username {
+  font-weight: bold;
+  width: 217px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#timestamp {
+  width: 217px;
+  position: relative;
+  float: right;
+  text-align: right;
+  font-size: .75rem;
+  padding-bottom: 6px;
+}
+
+#comment-text {
+  margin-top: 19px;
+  padding-top: 5px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+
+/*#respond {
+  margin-top: 10px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+
+#posts-list.has-comments li.no-comments {
+  display: none;
+}*/
