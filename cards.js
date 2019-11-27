@@ -61,7 +61,7 @@ function addComment() {
 }
 
 function validateComment() {
-
+    
     var nameval = document.getElementById("name").value;
     var commentval = document.getElementById("comment").value;
     var errormessage = document.createElement("label");
@@ -78,6 +78,8 @@ function validateComment() {
             return false;
         }
     }
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
 }
 
 
@@ -131,7 +133,124 @@ function addCard() {
     var productval = document.getElementById("product").value;
     var priceval = document.getElementById("pricenumber").value;
     var informationval = document.getElementById("info").value;
+    var cardnumberid = cardsNum + 1
+    var modalID = "commentModal" +  cardnumberid
+    //making new modal for comments
+    var modalDiv1 = document.createElement("div");
+    modalDiv1.setAttribute("class", "modal fade");
+    modalDiv1.setAttribute("id", modalID);
+    modalDiv1.setAttribute("tabindex", "-1");
+    modalDiv1.setAttribute("role", "dialog");
+    modalDiv1.setAttribute("aria-labelledby", "myModalLabel");
+    modalDiv1.setAttribute("aria-hidden", "true");
+    var firstform = document.createElement("form");
+    firstform.setAttribute("action", "cardspage.html");
+    firstform.setAttribute("method", "get");
+    var modalDiv2 = document.createElement("div");
+    modalDiv2.setAttribute("class", "modal-dialog");
+    modalDiv2.setAttribute("role", "document");
+    var modaldiv3 = document.createElement("div");
+    modaldiv3.setAttribute("class", "modal-content");
 
+    var modaldiv4 = document.createElement("div");
+    modaldiv4.setAttribute("class", "modal-header text-center");
+    var commentTitle = document.createElement("h4");
+    commentTitle.setAttribute("class", "modal-title w-100 font-weight-bold");
+    commentTitle.innerHTML = "Leave a Comment";
+    var closebutton = document.createElement("button");
+    closebutton.setAttribute("type", "button");
+    closebutton.setAttribute("class", "close");
+    closebutton.setAttribute("data-dismiss", "modal");
+    closebutton.setAttribute("aria-label", "Close");
+        var spanbutton = document.createElement("span");
+    spanbutton.setAttribute("aria-hidden", "true");
+    spanbutton.innerHTML = "&times;"
+    closebutton.appendChild(spanbutton);
+    modaldiv4.appendChild(commentTitle);
+    modaldiv4.appendChild(closebutton);
+
+    var firstsection = document.createElement("section");
+    firstsection.setAttribute("id", "comments");
+    firstsection.setAttribute("class", "comment-body mx-3");
+
+    var modaldiv5 = document.createElement("div");
+    modaldiv5.setAttribute("id", "respond");
+
+    var secondform = document.createElement("form");
+    secondform.setAttribute("action", "cardspage.html");
+    secondform.setAttribute("method", "post");
+    secondform.setAttribute("id", "commentform");
+
+    var modaldivname = document.createElement("div");
+    modaldivname.setAttribute("class", "md-form mb-5");
+    modaldivname.setAttribute("id", "namediv");
+    var namelabel = document.createElement("label");
+    namelabel.setAttribute("data-error", "wrong");
+    namelabel.setAttribute("data-success", "right");
+    namelabel.setAttribute("for", "comment");
+    var bolder = document.createElement("b");
+    bolder.innerHTML = "Your name"
+    namelabel.appendChild(bolder);
+    var nameinput = document.createElement("input");
+    nameinput.setAttribute("type", "text");
+    nameinput.setAttribute("placeholder", "optional");
+    nameinput.setAttribute("id", "name");
+    nameinput.setAttribute("class", "form-control validate");
+    modaldivname.appendChild(namelabel);
+    modaldivname.appendChild(nameinput);
+
+    var modaldivcomment = document.createElement("div");
+    modaldivcomment.setAttribute("class", "md-form");
+    modaldivcomment.setAttribute("id", "commentdiv");
+    var commentlabel = document.createElement("label");
+    commentlabel.setAttribute("data-error", "wrong");
+    commentlabel.setAttribute("data-success", "right");
+    commentlabel.setAttribute("for", "comment");
+    var boldertwo = document.createElement("b");
+    boldertwo.innerHTML = "Your comment";
+    commentlabel.appendChild(boldertwo);
+    var commentinput = document.createElement("textarea");
+    commentinput.setAttribute("type", "text");
+    commentinput.setAttribute("id", "comment");
+    commentinput.setAttribute("class", "md-textarea form-control")
+    commentinput.setAttribute("rows", "2");
+    modaldivcomment.appendChild(commentlabel);
+    modaldivcomment.appendChild(commentinput);
+
+    var submitdiv = document.createElement("div");
+    submitdiv.setAttribute("class", "modal-footer d-flex justify-content-center");
+    var submitbutton = document.createElement("button");
+    submitbutton.setAttribute("type", "button");
+    submitbutton.setAttribute("class", "btn btn-primary");
+    submitbutton.onclick = function () { validateComment(); };
+
+    submitbutton.innerHTML = "Submit Comment";
+    submitdiv.appendChild(submitbutton);
+
+    var commentsheaderdiv = document.createElement("div");
+    commentsheaderdiv.setAttribute("id", "comment-header");
+    var commentheadertext = document.createElement("h4");
+    commentheadertext.innerHTML = "Comments";
+    commentsheaderdiv.appendChild(commentheadertext);
+    var commentcontainerdiv = document.createElement("div");
+    commentcontainerdiv.setAttribute("id", "comment-container");
+
+
+    secondform.appendChild(modaldivname);
+    secondform.appendChild(modaldivcomment);
+    secondform.appendChild(submitdiv);
+    secondform.appendChild(commentsheaderdiv);
+    secondform.appendChild(commentcontainerdiv);
+    modaldiv5.appendChild(secondform);
+    firstsection.appendChild(modaldiv5);
+    modaldiv3.appendChild(modaldiv4);
+    modaldiv3.appendChild(firstsection);
+    modalDiv2.appendChild(modaldiv3);
+    firstform.appendChild(modalDiv2);
+    modalDiv1.appendChild(firstform);
+    
+    
+    //newcardcode
     var plusbutton = document.getElementById("plusbutton");
     var cardholder = document.getElementById("card-holder");
     var mainDiv = document.createElement("div");
@@ -154,8 +273,9 @@ function addCard() {
     footerElement.setAttribute("class", "card-footer");
     var commentLink = document.createElement("a");
     commentLink.setAttribute("href", "#");
+    var newidcommentmodal = "#" + modalID;
 		commentLink.setAttribute("data-toggle", "modal");
-		commentLink.setAttribute("data-target", "#CommentModal");
+		commentLink.setAttribute("data-target", newidcommentmodal);
     commentLink.setAttribute("class", "btn btn-primary");
     commentLink.innerHTML = "Comment";
 
@@ -176,6 +296,7 @@ function addCard() {
     mainDiv.appendChild(divOne);
 
     cardholder.insertBefore(mainDiv, plusbutton);
+    cardholder.insertBefore(modalDiv1, plusbutton);
 
     $("#CardModal").modal('toggle');
     document.getElementById("company").value = "";
