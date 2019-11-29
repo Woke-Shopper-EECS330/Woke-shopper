@@ -13,9 +13,18 @@ function makeTimeStamp() {
 	var day = d.getDate();
 	//var fuk = d.getMinutes();
 	if (d.getHours() >= 12) {
-		var hours = d.getHours() - 12;
-		var mornOrAfternoon = "pm";
+		if (d.getHours() == 12) {
+			var hours = 12;
+			var mornOrAfternoon = "pm";
+		} else {
+			var hours = d.getHours() - 12;
+			var mornOrAfternoon = "pm";
+		}
 	} else {
+		if (d.getHours() == 0) {
+			var hours = 12;
+			var mornOrAfternoon = "am";
+		}
 		var hours = d.getHours();
 		var mornOrAfternoon = "am";
 	}
