@@ -1,6 +1,8 @@
 var cards = [];
 var cardsNum = 2
 
+
+
 /* this function was found on stackOverflow */
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -29,13 +31,21 @@ function makeTimeStamp() {
 	return dayAndTime;
 }
 
-function addComment() {
-		var usernameval = document.getElementById("name").value;
-		var timeval = makeTimeStamp();
-		var commenttextval = document.getElementById("comment").value;
+function addComment(x) {
+    var modalID = "commentModal" + x;
+    var nameid = "name" + x;
+    var commentid = "comment" + x;
+    var commentdivid = "commentdiv" + x;
+    var commentheaderid = "comment-header" + x;
+    var commentcontainerid = "comment-container" + x;
+    
+    var usernameval = document.getElementById(nameid).value;
 
-		var commentHeader = document.getElementById("comment-header");
-		var commentContainer = document.getElementById("comment-container");
+		var timeval = makeTimeStamp();
+		var commenttextval = document.getElementById(commentid).value;
+
+		var commentHeader = document.getElementById(commentheaderid);
+    var commentContainer = document.getElementById(commentcontainerid);
 
 		var singleComment = document.createElement("div");
 		singleComment.setAttribute("class", "single-comment");
@@ -60,26 +70,31 @@ function addComment() {
 		insertAfter(singleComment, commentHeader);
 }
 
-function validateComment() {
-    
-    var nameval = document.getElementById("name").value;
-    var commentval = document.getElementById("comment").value;
+function validateComment(x) {
+
+    var nameid = "name" + x;
+    var commentid = "comment" + x;
+    var commentdivid = "commentdiv" + x;
+
+
+    var nameval = document.getElementById(nameid).value;
+    var commentval = document.getElementById(commentid).value;
     var errormessage = document.createElement("label");
     errormessage.innerHTML = "This field is required";
     errormessage.setAttribute("id", "error-message");
     $('.error').hide();
     if (commentval != "") {
-        addComment();
+        addComment(x);
     }
 
     else {
         if (commentval == "") {
-            document.getElementById("commentdiv").appendChild(errormessage)
+            document.getElementById(commentdivid).appendChild(errormessage)
             return false;
         }
     }
-    document.getElementById("name").value = "";
-    document.getElementById("comment").value = "";
+    document.getElementById(nameid).value = "";
+    document.getElementById(commentid).value = "";
 }
 
 
@@ -134,7 +149,13 @@ function addCard() {
     var priceval = document.getElementById("pricenumber").value;
     var informationval = document.getElementById("info").value;
     var cardnumberid = cardsNum + 1
-    var modalID = "commentModal" +  cardnumberid
+    var modalID = "commentModal" + cardnumberid
+    var nameid = "name" + cardnumberid
+    var commentid = "comment" + cardnumberid
+    var commentdivid = "commentdiv" + cardnumberid
+    var commentheaderid = "comment-header" + cardnumberid
+    var commentcontainerid = "comment-container" + cardnumberid
+
     //making new modal for comments
     var modalDiv1 = document.createElement("div");
     modalDiv1.setAttribute("class", "modal fade");
@@ -194,14 +215,14 @@ function addCard() {
     var nameinput = document.createElement("input");
     nameinput.setAttribute("type", "text");
     nameinput.setAttribute("placeholder", "optional");
-    nameinput.setAttribute("id", "name");
+    nameinput.setAttribute("id", nameid);
     nameinput.setAttribute("class", "form-control validate");
     modaldivname.appendChild(namelabel);
     modaldivname.appendChild(nameinput);
 
     var modaldivcomment = document.createElement("div");
     modaldivcomment.setAttribute("class", "md-form");
-    modaldivcomment.setAttribute("id", "commentdiv");
+    modaldivcomment.setAttribute("id", commentdivid);
     var commentlabel = document.createElement("label");
     commentlabel.setAttribute("data-error", "wrong");
     commentlabel.setAttribute("data-success", "right");
@@ -211,7 +232,7 @@ function addCard() {
     commentlabel.appendChild(boldertwo);
     var commentinput = document.createElement("textarea");
     commentinput.setAttribute("type", "text");
-    commentinput.setAttribute("id", "comment");
+    commentinput.setAttribute("id", commentid);
     commentinput.setAttribute("class", "md-textarea form-control")
     commentinput.setAttribute("rows", "2");
     modaldivcomment.appendChild(commentlabel);
@@ -222,18 +243,18 @@ function addCard() {
     var submitbutton = document.createElement("button");
     submitbutton.setAttribute("type", "button");
     submitbutton.setAttribute("class", "btn btn-primary");
-    submitbutton.onclick = function () { validateComment(); };
+    submitbutton.onclick = function () { validateComment(cardnumberid); };
 
     submitbutton.innerHTML = "Submit Comment";
     submitdiv.appendChild(submitbutton);
 
     var commentsheaderdiv = document.createElement("div");
-    commentsheaderdiv.setAttribute("id", "comment-header");
+    commentsheaderdiv.setAttribute("id", commentheaderid);
     var commentheadertext = document.createElement("h4");
     commentheadertext.innerHTML = "Comments";
     commentsheaderdiv.appendChild(commentheadertext);
     var commentcontainerdiv = document.createElement("div");
-    commentcontainerdiv.setAttribute("id", "comment-container");
+    commentcontainerdiv.setAttribute("id", commentcontainerid);
 
 
     secondform.appendChild(modaldivname);
