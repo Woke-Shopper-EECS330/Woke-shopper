@@ -3,8 +3,18 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
+  padding-left: 0px;
+  padding-right: 0px;
   padding-top: 56px;
+  margin: 0px;
+  width: inherit;
+  min-height: inherit;
 }
 
 .card {
@@ -18,7 +28,8 @@ body {
 .py-5 {
   background-color: #90EE90;
   margin-top: 20px;
-  width: 100%;
+  width: 100% !important;
+  margin: 0;
 }
 
 .nav-link {
