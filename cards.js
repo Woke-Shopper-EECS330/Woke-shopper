@@ -1,5 +1,5 @@
 var cards = [];
-var cardsNum = 2
+var cardsNum = 3
 
 
 
@@ -32,19 +32,16 @@ function makeTimeStamp() {
 }
 
 function addComment(x) {
-    var modalID = "commentModal" + x;
     var nameid = "name" + x;
     var commentid = "comment" + x;
-    var commentdivid = "commentdiv" + x;
     var commentheaderid = "comment-header" + x;
     var commentcontainerid = "comment-container" + x;
     
     var usernameval = document.getElementById(nameid).value;
+	var timeval = makeTimeStamp();
+	var commenttextval = document.getElementById(commentid).value;
 
-		var timeval = makeTimeStamp();
-		var commenttextval = document.getElementById(commentid).value;
-
-		var commentHeader = document.getElementById(commentheaderid);
+	var commentHeader = document.getElementById(commentheaderid);
     var commentContainer = document.getElementById(commentcontainerid);
 
 		var singleComment = document.createElement("div");

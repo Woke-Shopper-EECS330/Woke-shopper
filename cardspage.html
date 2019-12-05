@@ -13,11 +13,9 @@
 </head>
 
 <body>
+
     <div class="s01">
         <form id="main-form">
-            <fieldset>
-                <legend>Woke Shopper</legend>
-            </fieldset>
             <div class="inner-form">
                 <div class="input-field first-wrap">
                     <input id="search" type="text" aria-label="Item input" placeholder="What are you looking for?" />
@@ -105,7 +103,7 @@
         <!-- Page Features -->
         <div class="row text-center" id="card-holder">
 
-            <div id="cards-container" style="width: 100%"></div>
+            <div class="row text-center" id="cards-container" style="width: 100%"></div>
 
             <div class="col-lg-3 col-md-6 mb-4" id="plusbutton">
                 <a href="#" data-toggle="modal" data-target="#CardModal" class="btn btn-primary plus-button">
@@ -114,59 +112,6 @@
             </div>
 
 
-                      <div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-          aria-hidden="true">
-            <form action="cardspage.html" method="get" id="modalform-comment">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                  <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-
-                  <section id="comments" class="comment-body mx-3">
-                    <div id="respond">
-
-                        <form action="cardspage.html" method="post" id="commentform">
-
-                            <div class="md-form mb-5" id="namediv">
-                              <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
-                              <input type="text" placeholder="optional" id="name" class="form-control validate">
-                            </div>
-
-                            <div class="md-form" id="commentdiv">
-                              <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
-                              <textarea type="text" id="comment" class="md-textarea form-control" rows="2"></textarea>
-                            </div>
-
-                            <div class="modal-footer d-flex justify-content-center">
-                              <button type = "button" class = "btn btn-primary" onclick="validateComment()">Submit Comment</button>
-                             </div>
-
-                             <div id="comment-header">
-                               <h4>Comments</h4>
-                             </div>
-                             <div id="comment-container">
-
-                             <div class="single-comment">
-                               <div id="username">Anthony
-                               </div>
-                               <div id="timestamp">11/26/2019 - 2:54pm
-                               </div>
-                               <div id="comment-text">This is a good source.
-                               </div>
-                             </div>
-                           </div>
-                        </form>
-                      </div>
-                  </section>
-                </div>
-              </div>
-              </form>
-            </div>
 
 
             <!--- Card Modal -->
@@ -211,36 +156,237 @@
                                         <input type="checkbox" name="store3" value="Target">Target
                                         <br>
                                     </div>
-                                    <div/>
-
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
                                     <input type="submit" value="Submit" onclick="validation()">
                                 </div>
+                              </div>
                             </div>
-                        </div>
-                </form>
-                </div>
+                          </div>
+                        </form>
+                      </div>
 
-                <!--<div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+<!--Comment Modal-->
+<div class="modal fade" id="CommentModal0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>-->
 
+        <section id="comments" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform">
+
+                  <div class="md-form mb-5" id="namediv0">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name0" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv0">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment0" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment(0)">Submit Comment</button>
+                   </div>
+
+                   <div id="comment-header0">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container0">
+
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is a good source. 0
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div>
+        </section>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <!--Comment Modal-->
+<div class="modal fade" id="CommentModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <section id="comments1" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform1">
+
+                  <div class="md-form mb-5" id="namediv1">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name1" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv1">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment1" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment(1)">Submit Comment</button>
+                   </div>
+
+                   <div id="comment-header1">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container1">
+
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is a good source. 1
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div>
+        </section>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <!--Comment Modal-->
+<div class="modal fade" id="CommentModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <section id="comments2" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform2">
+
+                  <div class="md-form mb-5" id="namediv2">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name2" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv2">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment2" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment(2)">Submit Comment</button>
+                   </div>
+
+                   <div id="comment-header2">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container2">
+
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is a good source. 2
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div>
+        </section>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <!--Comment Modal-->
+<div class="modal fade" id="CommentModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <form action="cardspage.html" method="get" id="modalform-comment3">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Leave a Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <section id="comments3" class="comment-body mx-3">
+          <div id="respond">
+
+              <form action="cardspage.html" method="post" id="commentform3">
+
+                  <div class="md-form mb-5" id="namediv3">
+                    <label data-error="wrong" data-success="right" for="name"><b>Your name</b></label>
+                    <input type="text" placeholder="optional" id="name3" class="form-control validate">
+                  </div>
+
+                  <div class="md-form" id="commentdiv3">
+                    <label data-error="wrong" data-success="right" for="comment"><b>Your comment</b></label>
+                    <textarea type="text" id="comment3" class="md-textarea form-control" rows="2"></textarea>
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type = "button" class = "btn btn-primary" onclick="validateComment(3)">Submit Comment</button>
+                   </div>
+
+                   <div id="comment-header3">
+                     <h4>Comments</h4>
+                   </div>
+                   <div id="comment-container3">
+
+                   <div class="single-comment">
+                     <div id="username">Anthony
+                     </div>
+                     <div id="timestamp">11/26/2019 - 2:54pm
+                     </div>
+                     <div id="comment-text">This is a good source. 3
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div>
+        </section>
+      </div>
+    </div>
+    </form>
+  </div>
             </div>
             <!-- /.row -->
-
-
         </div>
         <!-- /.container -->
 
@@ -265,20 +411,37 @@
                 name: 'Drinkable Yogurt',
                 price: 1.99,
                 information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.",
-                stores: "Whole Foods"
+                stores: "Whole Foods",
+                modal: "#CommentModal0",
             }, {
                 companyName: 'Starbucks',
                 name: 'Coffee',
                 price: 99.99,
                 information: "Very expensive coffee",
-                stores: "Whole Foods"
+                stores: "Whole Foods",
+                modal: "#CommentModal1"
+            },
+            {
+                companyName: 'Nestle',
+                name: 'Chocolate',
+                price: 1.99,
+                information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.",
+                stores: "Whole Foods",
+                modal: "#CommentModal2"
+            },
+            {
+                companyName: 'Coca-Cola',
+                name: 'Soda',
+                price: 1.99,
+                information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.",
+                stores: "Whole Foods",
+                modal: "#CommentModal3"
             }];
 
             function makeCard(card) {
                return `
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card h-100" id="card1">
-        <!--<img class="card-img-top" src="http://placehold.it/500x325" alt="">-->
         <div class="card-body">
           <h4 id="company-name">${card.companyName}</h4>
           <h5 id="product-name">${card.name}</h5>
@@ -287,7 +450,7 @@
           <p id="stores-available"><b>${card.stores}</b></p>
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Comment</a>
+          <a href="#" data-toggle="modal" data-target=${card.modal} class="btn btn-primary">Comment</a>
         </div>
 
       </div>
@@ -300,7 +463,7 @@
 
 
             function populateCards(cards) {
-              var cardsHTML = cards.map(makeCard).join("");
+              var cardsHTML = cards.map(makeCard).join("", cards);
               document.querySelector('#cards-container').innerHTML = cardsHTML;
             }
 

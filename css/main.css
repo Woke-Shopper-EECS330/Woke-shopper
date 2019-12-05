@@ -486,28 +486,17 @@ legend {
 }
 
 .s01 {
-  min-height: 100vh;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  padding: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  padding: 20px;
   text-align: center;
 }
 
 .s01 form {
   width: 100%;
-  max-width: 1290px;
 }
 
 .s01 form legend {
