@@ -27,6 +27,7 @@ body {
 
 .navbar-brand {
   color: black;
+  font-size: 30px;
 }
 
 .navbar {
@@ -35,6 +36,10 @@ body {
 
 .store-availability {
   padding: 50px;
+}
+
+.s01 {
+  padding-top: 8px;
 }
 
 .plus-button {
